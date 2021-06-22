@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ecommerce/defined/screen_size.dart';
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -18,6 +19,8 @@ final headingStyle = TextStyle(
   color: Colors.black,
   height: 1.5,
 );
+
+getProportionateScreenWidth(int i) {}
 
 const defaultDuration = Duration(milliseconds: 250);
 
