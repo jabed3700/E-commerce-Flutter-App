@@ -2,6 +2,8 @@ import 'package:ecommerce/components/custom_svg_icon.dart';
 import 'package:ecommerce/components/default_btn.dart';
 import 'package:ecommerce/components/form_errors.dart';
 import 'package:ecommerce/defined/constants.dart';
+import 'package:ecommerce/screens/forget_password/forget_password.dart';
+import 'package:ecommerce/screens/login_success/login_success.dart';
 import 'package:flutter/material.dart';
 
 class SignInForm extends StatefulWidget {
@@ -42,8 +44,8 @@ class _SignInFormState extends State<SignInForm> {
               Text("Remember me"),
               Spacer(),
               GestureDetector(
-                // onTap: () => Navigator.pushNamed(
-                //     context, ForgotPasswordScreen.routeName),
+                onTap: () => Navigator.pushNamed(
+                    context, ForgotPasswordScreen.routeName),
                 child: Text(
                   "Forgot Password",
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -58,6 +60,7 @@ class _SignInFormState extends State<SignInForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           ),

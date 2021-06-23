@@ -19,8 +19,8 @@ class NoAccountContent extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () =>
-              Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
+          // onTap: () =>
+          //     Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
           child: Text(
             "Sign Up",
             style: TextStyle(fontSize: 16, color: kPrimaryColor),
