@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/welcome/component/welcome_screen_content.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/defined/constants.dart';
@@ -10,6 +11,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  int currentPage = 0;
   List<Map> WelcomeData = [
     {
       "text": "Welcome to Tokoto, Let’s shop!",
@@ -35,6 +37,11 @@ class _BodyState extends State<Body> {
             Expanded(
               flex: 3,
               child: PageView.builder(
+                onPageChanged: (value) {
+                  setState(() {
+                    currentPage = value;
+                  });
+                },
                 itemCount: WelcomeData.length,
                 itemBuilder: (context, index) => WelcomeContent(
                   image: WelcomeData[index]["image"],
@@ -42,41 +49,34 @@ class _BodyState extends State<Body> {
                 ),
               ),
             ),
+            Expanded(
+                child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    WelcomeData.length,
+                    (index) => buildDot(index: index),
+                  ),
+                ),
+              ],
+            ))
           ],
         ),
       ),
     );
   }
-}
 
-class WelcomeContent extends StatelessWidget {
-  const WelcomeContent({
-    Key? key,
-    required this.image,
-    required this.text,
-  }) : super(key: key);
-  final String text, image;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Spacer(),
-        Text(
-          'SHOPIX',
-          style: TextStyle(
-              fontSize: 40, color: kPrimaryColor, fontWeight: FontWeight.bold),
-        ),
-        Text(text),
-        Spacer(
-          flex: 2,
-        ),
-        Image.asset(
-          image,
-          height: 250,
-          width: 2350,
-        ),
-      ],
+  AnimatedContainer buildDot({required int index}) {
+    return AnimatedContainer(
+      duration: kAnimationDuration,
+      margin: EdgeInsets.only(right: 5),
+      height: 6,
+      width: currentPage == index ? 20 : 6,
+      decoration: BoxDecoration(
+        color: currentPage == index ? kPrimaryColor : Color(0xFFD8D8D8),
+        borderRadius: BorderRadius.circular(3),
+      ),
     );
   }
 }
