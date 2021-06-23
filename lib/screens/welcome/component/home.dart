@@ -1,11 +1,12 @@
-import 'package:ecommerce/screens/welcome/component/welcome_screen_content.dart';
+import 'dart:ffi';
+
+import 'package:ecommerce/components/default_btn.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/defined/constants.dart';
+import 'package:ecommerce/screens/welcome/component/welcome_screen_content.dart';
 
 class Body extends StatefulWidget {
-  // const Body({Key? key}) : super(key: key);
-
   @override
   _BodyState createState() => _BodyState();
 }
@@ -14,12 +15,11 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map> WelcomeData = [
     {
-      "text": "Welcome to Tokoto, Let’s shop!",
+      "text": "Welcome to Shopix, Let’s shop!",
       "image": "assets/images/splash_1.png"
     },
     {
-      "text":
-          "We help people conect with store \naround United State of America",
+      "text": "We help people connect with store \naround Bangladesh",
       "image": "assets/images/splash_2.png"
     },
     {
@@ -50,17 +50,31 @@ class _BodyState extends State<Body> {
               ),
             ),
             Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    WelcomeData.length,
-                    (index) => buildDot(index: index),
-                  ),
+                  children: <Widget>[
+                    Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        WelcomeData.length,
+                        (index) => buildDot(index: index),
+                      ),
+                    ),
+                    Spacer(
+                      flex: 2,
+                    ),
+                    DefaultBtn(
+                      text: 'Continue',
+                      press: () {},
+                    ),
+                    Spacer(),
+                  ],
                 ),
-              ],
-            ))
+              ),
+            ),
           ],
         ),
       ),
@@ -72,7 +86,7 @@ class _BodyState extends State<Body> {
       duration: kAnimationDuration,
       margin: EdgeInsets.only(right: 5),
       height: 6,
-      width: currentPage == index ? 20 : 6,
+      width: currentPage == index ? 25 : 9,
       decoration: BoxDecoration(
         color: currentPage == index ? kPrimaryColor : Color(0xFFD8D8D8),
         borderRadius: BorderRadius.circular(3),

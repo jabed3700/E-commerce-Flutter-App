@@ -1,4 +1,5 @@
 import 'package:ecommerce/defined/constants.dart';
+import 'package:ecommerce/route.dart';
 import 'package:ecommerce/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),
+      // home: WelcomeScreen(),
+      initialRoute: WelcomeScreen.routeName,
+      routes: routes,
     );
   }
 }

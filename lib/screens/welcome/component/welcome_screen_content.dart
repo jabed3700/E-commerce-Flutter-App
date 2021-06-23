@@ -22,6 +22,7 @@ class WelcomeContent extends StatelessWidget {
         Text(
           text,
           textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 16),
         ),
         Spacer(
           flex: 2,
