@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
   // const Body({Key? key}) : super(key: key);
@@ -16,12 +18,15 @@ class Body extends StatelessWidget {
                 'Welcome Back',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 28,
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 'Sign in with your email and password \nor continue with social media',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
               SignInForm(),
             ],
@@ -48,6 +53,9 @@ class _SignInFormState extends State<SignInForm> {
           TextFormField(
             decoration: InputDecoration(
               hintText: "Enter your email",
+              labelText: "Email",
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              suffixIcon: SvgPicture.asset('assets/icons/Mail.svg'),
             ),
           )
         ],
