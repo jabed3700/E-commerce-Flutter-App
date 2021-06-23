@@ -1,7 +1,8 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
-import 'package:ecommerce/components/default_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/components/default_btn.dart';
+import 'package:ecommerce/screens/sign_in/sign_in_screen.dart';
 
 import 'package:ecommerce/defined/constants.dart';
 import 'package:ecommerce/screens/welcome/component/welcome_screen_content.dart';
@@ -13,7 +14,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int currentPage = 0;
-  List<Map> WelcomeData = [
+  List<Map> welcomeData = [
     {
       "text": "Welcome to Shopix, Let’s shop!",
       "image": "assets/images/splash_1.png"
@@ -42,10 +43,10 @@ class _BodyState extends State<Body> {
                     currentPage = value;
                   });
                 },
-                itemCount: WelcomeData.length,
+                itemCount: welcomeData.length,
                 itemBuilder: (context, index) => WelcomeContent(
-                  image: WelcomeData[index]["image"],
-                  text: WelcomeData[index]['text'],
+                  image: welcomeData[index]["image"],
+                  text: welcomeData[index]['text'],
                 ),
               ),
             ),
@@ -59,7 +60,7 @@ class _BodyState extends State<Body> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        WelcomeData.length,
+                        welcomeData.length,
                         (index) => buildDot(index: index),
                       ),
                     ),
@@ -68,7 +69,9 @@ class _BodyState extends State<Body> {
                     ),
                     DefaultBtn(
                       text: 'Continue',
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],

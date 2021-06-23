@@ -1,6 +1,6 @@
-import 'package:ecommerce/defined/constants.dart';
 import 'package:ecommerce/route.dart';
 import 'package:ecommerce/screens/welcome/welcome_screen.dart';
+import 'package:ecommerce/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,15 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Muli',
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        primarySwatch: Colors.blue,
-      ),
+      theme: theme(),
       // home: WelcomeScreen(),
       initialRoute: WelcomeScreen.routeName,
       routes: routes,
