@@ -1,10 +1,7 @@
-import 'package:ecommerce/components/form_errors.dart';
+import 'package:ecommerce/components/no_account_content.dart';
 import 'package:ecommerce/components/social_icon.dart';
-import 'package:ecommerce/defined/constants.dart';
 import 'package:ecommerce/screens/sign_in/components/sing_in_form.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/components/custom_svg_icon.dart';
-import 'package:ecommerce/components/default_btn.dart';
 
 class Body extends StatelessWidget {
   // const Body({Key? key}) : super(key: key);
@@ -12,11 +9,11 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+      child: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 Text(
@@ -27,13 +24,14 @@ class Body extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 10),
                 Text(
                   'Sign in with your email and password \nor continue with social media',
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 60),
                 SignInForm(),
                 SizedBox(height: 20),
                 Row(
@@ -53,6 +51,8 @@ class Body extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 20),
+                NoAccountContent(),
               ],
             ),
           ),
