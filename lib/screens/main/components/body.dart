@@ -1,3 +1,5 @@
+import 'package:ecommerce/screens/main/components/categories.dart';
+import 'package:ecommerce/screens/main/components/spacial_offer.dart';
 import 'package:ecommerce/screens/main/components/top_banner.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +16,9 @@ class Body extends StatelessWidget {
             HomeHeader(),
             SizedBox(height: 10),
             TopBanner(),
+            Categories(),
+            SpecialOffers(),
+            SizedBox(height: 30),
           ],
         ),
       ),

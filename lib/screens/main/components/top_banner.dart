@@ -22,7 +22,7 @@ class TopBanner extends StatelessWidget {
         TextSpan(
           style: TextStyle(color: Colors.white),
           children: [
-            TextSpan(text: "A Summer Surpise\n"),
+            TextSpan(text: "Rainy Season Surpise\n"),
             TextSpan(
               text: "Cashback 50%",
               style: TextStyle(
