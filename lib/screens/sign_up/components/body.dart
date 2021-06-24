@@ -1,6 +1,6 @@
 import 'package:ecommerce/components/social_icon.dart';
 import 'package:ecommerce/defined/constants.dart';
-import 'package:ecommerce/sign_up/components/sign_up_form.dart';
+import 'package:ecommerce/screens/sign_up/components/sign_up_form.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -15,7 +15,10 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 40),
-                Text("Register Account", style: headingStyle),
+                Text(
+                  "Register Account",
+                  style: headingStyle,
+                ),
                 Text(
                   "Complete your details or continue \nwith social media",
                   textAlign: TextAlign.center,
