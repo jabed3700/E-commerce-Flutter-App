@@ -1,3 +1,4 @@
+import 'package:ecommerce/sign_up/sign_up_screen.dart';
 import 'package:js/js.dart';
 
 import 'package:ecommerce/screens/forget_password/forget_password.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 final Map<String, WidgetBuilder> routes = {
   WelcomeScreen.routeName: (context) => WelcomeScreen(),
   SignInScreen.routeName: (context) => SignInScreen(),
+  SignUpScreen.routeName: (context) => SignUpScreen(),
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
   LoginSuccessScreen.routeName: (context) => LoginSuccessScreen(),
 };

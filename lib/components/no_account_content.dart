@@ -1,5 +1,7 @@
 import 'package:ecommerce/defined/constants.dart';
 import 'package:ecommerce/screens/forget_password/forget_password.dart';
+import 'package:ecommerce/screens/sign_in/sign_in_screen.dart';
+import 'package:ecommerce/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class NoAccountContent extends StatelessWidget {
@@ -19,8 +21,7 @@ class NoAccountContent extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          // onTap: () =>
-          //     Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
+          onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
             "Sign Up",
             style: TextStyle(fontSize: 16, color: kPrimaryColor),
