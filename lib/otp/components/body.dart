@@ -1,5 +1,5 @@
 import 'package:ecommerce/defined/constants.dart';
-
+import 'package:ecommerce/otp/components/otp_form.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -17,14 +17,11 @@ class Body extends StatelessWidget {
                 "OTP Verification",
                 style: headingStyle,
               ),
-              Text("We sent your code to +1 898 860 ***"),
-              // buildTimer(),
-              // OtpForm(),
-              SizedBox(height: 40),
+              Text("We sent your code to +880 162 243 ***"),
+              OtpForm(),
+              SizedBox(height: 120),
               GestureDetector(
-                onTap: () {
-                  // OTP code resend
-                },
+                onTap: () {},
                 child: Text(
                   "Resend OTP Code",
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -36,22 +33,4 @@ class Body extends StatelessWidget {
       ),
     );
   }
-
-  // Row buildTimer() {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     children: [
-  //       Text("This code will expired in "),
-  //       TweenAnimationBuilder(
-  //         tween: Tween(begin: 30.0, end: 0.0),
-  //         duration: Duration(seconds: 30),
-  //         builder: (_, value, child) =>
-  //         Text(
-  //           "00:${value.toInt()}",
-  //           style: TextStyle(color: kPrimaryColor),
-  //         ),
-  //       ),
-  //     ],
-  //   );
-  // }
 }
